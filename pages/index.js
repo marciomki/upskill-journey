@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -16,6 +17,23 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <ul>
+          <li>
+            <Link href="/post/abc">
+              <a>Go to pages/post/[pid].js</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/post/abc?foo=bar">
+              <a>Also goes to pages/post/[pid].js</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/post/abc/a-comment">
+              <a>Go to pages/post/[pid]/[comment].js</a>
+            </Link>
+          </li>
+        </ul>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
